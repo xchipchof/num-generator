@@ -20,14 +20,14 @@ fn main() {
 
         let mut split_input = _input.trim().split(" ");
 
-        let first_number = split_input.next().unwrap();
+        let first_number = (split_input.next().unwrap()).parse::<i32>();
         
-        if first_number.parse::<i32>().is_err(){
+        if first_number.is_err(){
             println!("Please enter a valid number");
             continue;
         }
 
-        let guess : i32 = first_number.parse::<i32>().unwrap();
+        let guess : i32 = first_number.unwrap();
 
         if guess == NUMBER {
             println!("You guessed the number!");
@@ -42,7 +42,7 @@ fn main() {
             continue;
         }
 
-        println!("You entered: {}", first_number.parse::<i32>().unwrap());
+        println!("You entered: {}", guess);
 
 
     }
